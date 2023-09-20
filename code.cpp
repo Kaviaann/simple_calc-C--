@@ -5,7 +5,8 @@ using namespace std;
 
 // Function prototypes
 void calculate(char operation);
-void clearScreen();
+void clearScreen(); //clearing screen after calculating
+void exit_gate();
 
 int main() {
     cout << "\n--------------------------------------------\n\n   Welcome to simple calculator! \n     Made by : Ayi \n\n";
@@ -34,7 +35,7 @@ int main() {
             break;
 
         default:
-            cout << "Invalid choice. Exiting.\n";
+            exit_gate();
             break;
     }
 
@@ -99,5 +100,28 @@ void clearScreen() {
 
     if (clearStatus != 0) {
         clearStatus = system("cls");
+    }
+}
+
+//exit_gate();
+void exit_gate(){
+    char z;
+
+    cout << "\n\n Are You Want To Exit? (y/n)";
+    cin >> z;
+
+    switch (z)
+    {
+    case 'y':
+        clearScreen();
+        exit(0);
+        break;
+    
+    case 'n':
+        return;
+        break;
+
+    default:
+        break;
     }
 }
